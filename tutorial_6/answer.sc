@@ -11,7 +11,7 @@ object Answer {
     }
 
     def decrypt(word: String, shift: Int): String = {
-        encrypt(word, 26)
+        encrypt(word, 26 - shift)
     }
 
     def cipher(word: String, shift: Int, cipherFunc: (String, Int) => String): String = cipherFunc(word, shift)
@@ -21,7 +21,7 @@ object Answer {
         val shift = 5
 
         val encryptedWord = cipher(word, shift, encrypt)
-        val decryptedWord = cipher(word, shift, decrypt)
+        val decryptedWord = cipher(encryptedWord, shift, decrypt)
 
         println("Plain word: " + word)
         println("Encrypted word: " + encryptedWord)
