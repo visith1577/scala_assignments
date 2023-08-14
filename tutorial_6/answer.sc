@@ -18,7 +18,7 @@ object Answer {
 
     def main(args: Array[String]): Unit = {
         val word = "Hello, World!"  
-        val shift = 5
+        val shift = 20
 
         val encryptedWord = cipher(word, shift, encrypt)
         val decryptedWord = cipher(encryptedWord, shift, decrypt)
