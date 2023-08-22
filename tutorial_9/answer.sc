@@ -1,4 +1,5 @@
 case class Rational(numerator: Int, denominator: Int) {
+    require(denominator != 0, "denominator must not be zero")
 
     def neg: Rational = {
         Rational(-numerator, denominator)
